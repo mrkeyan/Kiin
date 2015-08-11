@@ -14,9 +14,16 @@ Date: June 21 2015
     </head>
     <body>
         <header>
-            <div id="home" class="header-content">
-                <nav id="navBar" class="header-nav">
-                    <a class="nav-button nav-sect-home" href="#sect-home">Home</a>
+            <div class="header-content">
+                <div class="header-logo"><img class="header-logo" src="images/kiin_logo_grey.jpg" alt="kiin logo"/>
+                </div>
+                <div class="order-button">
+                    order
+                </div>
+            </div>
+            <div class="sidebar">
+                <nav id="navBar" class="navBar">
+                    <a class="nav-button nav-sect-home" href="#gallery">Home</a>
                     <a class="nav-button nav-sect-1" href="#sect-1">Section 1</a>
                     <a class="nav-button nav-sect-2" href="#sect-2">Section 2</a>
                     <a class="nav-button nav-sect-3" href="#sect-3">Section 3</a>
@@ -24,58 +31,73 @@ Date: June 21 2015
                     <a class="nav-button nav-sect-5" href="#sect-5">Section 5</a>
                     <a class="nav-button nav-sect-6" href="#sect-6">Section 6</a>
                 </nav>
+                <div id="social" class="social">
+                    <div class="social-wrapper">
+                        <a href="http://www.facebook.com" target="_blank"><img src="images/facebook.svg" alt="social media facebook icon"/></a>
+                        <a href="http://twitter.com" target="_blank"><img src="images/twitter.svg" alt="social media twitter icon"/></a>
+                        <a href="http://www.instagram.com" target="_blank"><img src="images/instagram.svg" alt="social media instagram icon"/></a>
+                    </div>
+                </div>
             </div>
         </header>
-        <div id="gallery" class="gallery">
-            <div class="swiper-container">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
+        <div class="site">
+            
+            <div id="gallery" class="gallery">
+                <div class="swiper-container">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
 
-                    <div class="swiper-slide"><img class="slideshow-image" src="images/test_material.jpg" alt="white material"/></div>
-                    <div class="swiper-slide"><img class="slideshow-image" src="images/test_material_2.jpg" alt="blue material"/></div>
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination swiper-pagination-white"></div>
+                        <div class="swiper-slide">
+                            <img class="slideshow-image" src="images/test_1.jpg" alt="white material"/>
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="slideshow-image" src="images/test_2.jpg" alt="blue material"/>
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="slideshow-image" src="images/test_3.jpg" alt="blue material"/>
+                        </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination swiper-pagination-black"></div>
 
-                <!-- If we need navigation buttons 
+                    <!-- If we need navigation buttons 
 <div class="swiper-button-prev"></div>
 <div class="swiper-button-next"></div>
 -->
 
-            </div>
-        </div>
-        <div class="site">
-            <div id="sect-1" class="sect-1">
-                <div class="sect-1-wrapper">
-                    <h1>Reservations Coming Soon!</h1>
                 </div>
             </div>
-            <div id="sect-2" class="sect-2">
-                <div class="sect-2-wrapper">
+            <div class="site-content">
+                <div id="sect-1" class="sect-1 site-sect">
+                    <div class="sect-1-wrapper">
+                        <h1>Section 1</h1>
+                    </div>
                 </div>
-            </div>
-            <div id="sect-3" class="sect-3">
-                <div class="sect-3-wrapper">
+                <div id="sect-2" class="sect-2 site-sect">
+                    <div class="sect-2-wrapper">
+                        <h1>Section 2</h1>
+                    </div>
                 </div>
-            </div>
-            <div id="sect-4" class="sect-4">
-                <div class="sect-4-wrapper">
+                <div id="sect-3" class="sect-3 site-sect">
+                    <div class="sect-3-wrapper">
+                        <h1>Section 3</h1>
+                    </div>
                 </div>
-            </div>
-            <div id="sect-5" class="sect-5">
-                <div class="sect-5-wrapper">
+                <div id="sect-4" class="sect-4 site-sect">
+                    <div class="sect-4-wrapper">
+                        <h1>Section 4</h1>
+                    </div>
                 </div>
-            </div>
-            <div id="sect-6" class="sect-6">
-                <div class="sect-6-wrapper">
+                <div id="sect-5" class="sect-5 site-sect">
+                    <div class="sect-5-wrapper">
+                        <h1>Section 5</h1>
+                    </div>
                 </div>
-            </div>
-            <div id="social" class="social">
-                <div class="social-wrapper">
-                    <a href="http://www.facebook.com" target="_blank"><img src="images/facebook.svg" alt="social media facebook icon"/></a>
-                    <a href="http://twitter.com" target="_blank"><img src="images/twitter.svg" alt="social media twitter icon"/></a>
-                    <a href="http://www.instagram.com" target="_blank"><img src="images/instagram.svg" alt="social media instagram icon"/></a>
+                <div id="sect-6" class="sect-6 site-sect">
+                    <div class="sect-6-wrapper">
+                        <h1>Section 6</h1>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,14 +1,10 @@
 var mySwiper = new Swiper ('.swiper-container', {
     pagination: '.swiper-pagination',
-    // Navigation arrows
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
     paginationClickable: true,
-    spaceBetween: 0,
-    centeredSlides: true,
     autoplay: 5500,
-    autoplayDisableOnInteraction:false,
-    loop: true
+    loop: true,
+    direction: 'horizontal',
+    effect: 'fade'
 });
 
 /*doesn't work yet, want to switch off of jquery */
