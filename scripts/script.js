@@ -2,6 +2,7 @@ var mySwiper = new Swiper ('.swiper-container', {
     pagination: '.swiper-pagination',
     paginationClickable: true,
     autoplay: 5500,
+    autoplayDisableOnInteraction: false,
     loop: true,
     direction: 'horizontal',
     effect: 'fade'
