@@ -1,4 +1,4 @@
-//if icon 1 or 2 are cliccked, remove the selected class from all
+//if icon 1 or 2 are clicked, remove the selected class from all
 //add the selected class to the icon clicked
 //animate this transition
 $( "#icon-image-1, #icon-image-2" ).on("click", function(){
@@ -41,3 +41,22 @@ $( "#pointer-1" ).on("click", function(){
         $(".info-image-0").removeClass("hidden-text");
     }
 });
+
+$( "#enter_site_btn" ).click(function(){
+    var cover = $( "#enter_cover" );
+    cover.slideUp(1000);
+});
+
+var eventPosition = 550;
+
+$(window).scroll(function(e){
+    console.log("y position: " + screenY);
+    console.log($(body).scrollTop());
+    if (window.screenY >= eventPosition){
+        fireEvent();
+    }
+});
+
+function fireEvent(){
+    $(".nav-bar").hide();
+};
