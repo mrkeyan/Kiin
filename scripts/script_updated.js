@@ -2,41 +2,66 @@ var img_con = $(".intro-image-container");
 var image1 = $(".intro-image-2nd-page");
 var image2 = $(".intro-image-3rd-page");
 var desc = $('.desc-sect');
+var desc_cont = $('.desc-sect-container');
 var lastScroll = 0;
+var timer;
+var fade = [0,0]; //fade at 0 means hidden, 1 visible
 
 //fade the logo out after 2 seconds
 $(window).load(function () {
     //$('html').css("overflow","hidden");
     if($(this).innerWidth() > 700){
         $('.landing-page').delay(2000).fadeOut(1000);
+        fadeOutDesc();
     }
 });
 
 $(window).scroll(function(event){
     if($(window).innerWidth()>700){
-        var scroll = $(this).scrollTop();
-        //var desc = $(".desc-sect-words").offset().top;
-        var image_h = img_con.height();
-        var image1_h = image1.height();
-        //console.log("scroll value: " + scroll);
-        //console.log("scroll desc: " + desc);
-        //console.log("image height: " + image1_h);
-        //console.log("image height: " + image_h);
 
-        if((scroll > 0) &&(scroll < image1_h*1.25) && (scroll > lastScroll)){
-            scrollToDesc(image1.height()/3);
+        var scroll = $(this).scrollTop();
+        //var image_h = img_con.height();
+        //var image1_h = image1.height();
+
+        if(timer) {
+            window.clearTimeout(timer);
         }
-        if(scroll > image1_h*1.25){
-            image1.fadeOut(500);
-            image2.fadeOut(500);
-        }else{
-            image1.fadeIn(500);
-            image2.fadeIn(500);
-        }
-        if(scroll == 0){
-            showBorder();
-        }
-        lastScroll = scroll;
+        timer = window.setTimeout(function() {
+            // actual code here. Your call back function.
+/*            console.log("scroll height: " + scroll);
+            console.log("desc pos: " + $(desc).position().top);
+            console.log("lastscroll: " + lastScroll);
+            console.log("fade[0]: " + fade[0]);*/
+            
+            //scroll moving down
+            //scroll between top and desc
+            if((scroll => 0) &&(scroll < $(desc).position().top ) && (scroll > lastScroll)){
+                scrollToDesc();
+            }else if((scroll <= $(desc).position().top*.9) && (scroll < lastScroll)){
+                //scroll moving up
+                //scroll just before desc
+                scrollToLanding();
+            }else if((scroll > $(desc).position().top) && (scroll > lastScroll)){
+                //past desc
+                //scroll moving down
+                fadeOutDesc();
+                fadeOutImages();
+            }else if((scroll >= $(desc).position().top) && (scroll < lastScroll)){
+                //past desc
+                //going up
+                fadeInImages();
+                scrollToDesc();
+                //desc_cont.fadeIn(500);
+            }else{
+                fadeInImages();
+                console.log("missed something");
+            }
+            lastScroll = scroll;
+            console.log( "Firing!" );
+        }, 100);
+
+
+
 
         image2.css("clip", "rect(auto,auto," + scroll + ",auto)");
     }
@@ -63,13 +88,7 @@ $(window).one('scroll', function(){
 
 //scroll to the next part of the page
 $('.intro-image-border').click(function(){
-    var x;
-    if(($(window).innerWidth()>700) && ($(window).innerWidth()< 999)){
-        x = image1.height()/3;
-    }else{
-        x = 0;
-    }
-    scrollToDesc(x);
+    scrollToDesc();
     //showDesc();
 });
 
@@ -80,20 +99,46 @@ $('.intro-image-border').click(function(){
 //functions
 
 function removeBorder(){
-    $('.intro-image-border').css("visibility","hidden");    
+    $('.intro-image-border').fadeOut(500);    
 }
 function showBorder(){
-    $('.intro-image-border').css("visibility","visible");
+    $('.intro-image-border').fadeIn(500);
 }
 
-function scrollToDesc(x){
+function scrollToLanding(){
+    //console.log("scrollToLanding()");
+    fadeOutDesc();
+    TweenLite.to(window, 1, {scrollTo:{y: 0}, ease: Power1.easeInOut, onComplete:showBorder});
+}
+
+function scrollToDesc(){
+    //console.log("scrollToDesc()");
     removeBorder();
-    var topY = $(desc).position().top - x;
-    //showDesc();
-    TweenLite.to(window, 2, {scrollTo:{y: topY, autoKill: true}});
-    TweenLite.to(".desc-sect",0.5, {css:{opacity:1.0},delay:2});
+    var topY = $(desc).position().top;
+    TweenLite.to(window, 2, {scrollTo:{y: topY}, ease: Power1.easeInOut, onComplete:showDesc});
+    //TweenLite.to(".desc-sect",0.5, {css:{opacity:1.0},delay:1});
 }
 
 function showDesc(){
-    desc.css({'visibility':'visible'});
+    //console.log("showDesc()");
+    //desc_cont.css({'opacity':'1.0'});
+    desc_cont.fadeIn(500);
+    fade[0] = 1;
+}
+
+function fadeOutDesc(){
+    //console.log("fadeOutDesc()");
+    fade[0] = 0;
+    desc_cont.fadeOut(500);
+}
+
+function fadeInImages(){
+    //console.log("fadeInImages()");
+    image1.fadeIn(500);
+    image2.fadeIn(500);
+}
+function fadeOutImages(){
+    //console.log("fadeOutImages()");
+    image1.fadeOut(500);
+    image2.fadeOut(500);
 }

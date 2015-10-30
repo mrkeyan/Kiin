@@ -140,10 +140,15 @@ mobile css
     .desc-sect{
         background: #151515;
         //visibility: hidden;
-        opacity: 0.0;
+        opacity: 1.0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .desc-sect-container{ 
         background-color:transparent;
+        
     }
     
     .desc-sect-words{
@@ -162,7 +167,10 @@ mobile css
     }
     
     .desc-sect{
-        height:1000px;        
+        height:1000px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .desc-sect-container{ 
