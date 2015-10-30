@@ -9,8 +9,16 @@ mobile css
     }
 
     .landing-page{
+        display:-webkit-box;
+        display:-webkit-flex;
+        display:-ms-flexbox;
         display:flex;
+        -webkit-align-content: center;
+        -ms-flex-line-pack: center;
         align-content: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
         justify-content: center;
         width:100%;
         background: black;
@@ -63,8 +71,17 @@ mobile css
     }
     .landing-page{
         position: fixed;
+        display:-webkit-box;
+        display:-webkit-flex;
+        display:-ms-flexbox;
         display:flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
         align-items: center;
         width: 100%;
         height: 100%;
@@ -78,10 +95,19 @@ mobile css
     
     .intro-sect{
         background: #151515;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
         height: 100%;
         width: 100%;
+        -webkit-box-pack:center;
+        -webkit-justify-content:center;
+        -ms-flex-pack:center;
         justify-content:center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
         align-items: center;
     }
     .intro-image{
@@ -94,8 +120,17 @@ mobile css
     .intro-image-container{
         width:100%;
         height:100%;
+        display:-webkit-box;
+        display:-webkit-flex;
+        display:-ms-flexbox;
         display:flex;
+        -webkit-box-pack:center;
+        -webkit-justify-content:center;
+        -ms-flex-pack:center;
         justify-content:center;
+        -webkit-box-align:center;
+        -webkit-align-items:center;
+        -ms-flex-align:center;
         align-items:center; 
     }
     .intro-image-2nd-page{
@@ -124,6 +159,19 @@ mobile css
         visibility: visible;
         clip:rect(auto,auto,0px, auto);
     }
+    .intro-image-4th-page{
+        width:100%;
+        min-width:700px;
+        position: absolute;
+        top: 0;
+        left:0;
+        bottom: 0;
+        right:0;
+        margin:auto;
+        opacity:1;
+        visibility: visible;
+        clip:rect(auto,auto,0px, auto);
+    }
     .intro-image-border{
         width:100%;
         min-width:700px;
@@ -139,11 +187,19 @@ mobile css
     
     .desc-sect{
         background: #151515;
-        //visibility: hidden;
         opacity: 1.0;
         height: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
         justify-content: center;
     }
     .desc-sect-container{ 
@@ -154,6 +210,24 @@ mobile css
     .desc-sect-words{
         line-height: 2em;
     }
+    
+    .prod-sect{
+        height: 100%;
+        background: #151515;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        
+    }
 }
 
 @media only screen and (min-width: 1000px){
@@ -161,22 +235,37 @@ mobile css
         display:block;
     }
     
-    .intro-image-2nd-page, .intro-image-3rd-page, .intro-image-border{
+    .intro-image-2nd-page, .intro-image-3rd-page, .intro-image-4th-page, .intro-image-border{
         min-width: 1000px;
         width:75%;
     }
     
     .desc-sect{
         height:1000px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
         justify-content: center;
     }
 
     .desc-sect-container{ 
         background-color:transparent;
         width:1100px;
+        display:-webkit-box;
+        display:-webkit-flex;
+        display:-ms-flexbox;
         display:flex;
+        -webkit-box-pack: end;
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
         justify-content: flex-end;                
     }
 
