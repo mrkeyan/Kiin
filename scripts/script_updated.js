@@ -1,7 +1,9 @@
 var img_con = $(".intro-image-container");
-var image1 = $(".intro-image-2nd-page");
-var image2 = $(".intro-image-3rd-page");
-var image3 = $(".intro-image-4th-page");
+var image1 = $(".intro-image-2nd-page"); //suit and shirt
+var image2 = $(".intro-image-3rd-page"); //blue suit and shirt
+var image3 = $(".intro-image-4th-page"); //blank bar
+var image4 = $(".intro-image-5th-page"); //product description
+var image5 = $(".intro-image-6th-page"); //product
 var desc = $('.desc-sect');
 var desc_pos = $(desc).position().top;
 var desc_cont = $('.desc-sect-container');
@@ -38,7 +40,7 @@ $(window).scroll(function(event){
 
             //scroll moving down
             //scroll between top and desc
-            if((scroll => 0) &&(scroll < desc_pos ) && (scroll > lastScroll)){
+            if((scroll => 0) &&(scroll<desc_pos) && (scroll > lastScroll)){
                 scrollToDesc();
             }else if((scroll <= desc_pos*.95) && (scroll < lastScroll)){
                 //scroll moving up
@@ -61,6 +63,7 @@ $(window).scroll(function(event){
                 //fadeInImages();
                 //console.log("missed something");
             }
+            
             lastScroll = scroll;
             //console.log( "Firing!" );
         }, 100);
@@ -104,9 +107,6 @@ $('.intro-image-border').click(function(){
 });
 
 
-
-
-
 //functions
 
 function removeBorder(){
@@ -140,12 +140,21 @@ function scrollToDesc(){
     //TweenLite.to(".desc-sect",0.5, {css:{opacity:1.0},delay:1});
 }
 
-function scrollToProd(){
+function scrollToProdDesc(){
     console.log("prod_pos: "+prod_pos+" prod height: "+prod.height());
     if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)){
         window.scrollTo(0,prod_pos+prod.height());
     }else{
         TweenLite.to(window, 1, {scrollTo:{y: prod_pos + prod.height()}, ease: Power1.easeInOut});
+    }
+}
+
+function scrollToProd(){
+    console.log("prod_pos: "+prod_pos+" prod height: "+prod.height());
+    if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)){
+        window.scrollTo(0,prod_pos);
+    }else{
+        TweenLite.to(window, 1, {scrollTo:{y: prod_pos}, ease: Power1.easeInOut});
     }
 }
 
